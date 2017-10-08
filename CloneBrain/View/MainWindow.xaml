@@ -1,0 +1,88 @@
+﻿<Window x:Class="CloneBrain.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CloneBrain"
+        mc:Ignorable="d"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="13"
+        TextOptions.TextFormattingMode="Ideal" 
+        TextOptions.TextRenderingMode="Auto"
+        Background="{DynamicResource MaterialDesignPaper}"
+        FontFamily="{DynamicResource MaterialDesignFont}"
+        Title="Clone Brain" Height="330" Width="270"
+        MinHeight="240" MinWidth="120" ResizeMode="CanMinimize" Icon="/Resources/brain.png">
+
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.PopupBox.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="35"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <DockPanel Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <materialDesign:ColorZone Mode="Light" DockPanel.Dock="Top" VerticalAlignment="Center" VerticalContentAlignment="Center" HorizontalContentAlignment="Right">
+                <Image Source="/Resources/brain.png" Margin="0,3,0,0"/>
+            </materialDesign:ColorZone>
+        </DockPanel>
+
+        <DockPanel Grid.Row="1">
+            <ScrollViewer ScrollViewer.VerticalScrollBarVisibility="Hidden" Margin="0,10,0,0">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="30"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="30"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Button x:Name="obj_Card" Grid.ColumnSpan="3" materialDesign:ShadowAssist.ShadowDepth="Depth2" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" Height="256" Width="254">
+                        <materialDesign:Card materialDesign:ShadowAssist.ShadowDepth="Depth2" Margin="0,0,0,5" VerticalContentAlignment="Center" VerticalAlignment="Stretch" HorizontalContentAlignment="Center">
+                            <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#DD000000"><Run Text="Draw Your Think !"/></TextBlock>
+                        </materialDesign:Card>
+                    </Button>
+
+                    <DockPanel Grid.Column="0">
+                        <Rectangle x:Name="cardLeft" MouseMove="cardLeft_MouseMove">
+                            <Rectangle.Fill>
+                                <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.WindowTextColorKey}}" Opacity="0.00"/>
+                            </Rectangle.Fill>
+                        </Rectangle>
+                    </DockPanel>
+
+                    <DockPanel Grid.Column="2">
+                        <Rectangle x:Name="cardRight" MouseMove="cardRight_MouseMove">
+                            <Rectangle.Fill>
+                                <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.WindowTextColorKey}}" Opacity="0.00"/>
+                            </Rectangle.Fill>
+                        </Rectangle>
+                    </DockPanel>
+
+                </Grid>
+            </ScrollViewer>
+        </DockPanel>
+
+        <materialDesign:PopupBox x:Name="Btn_Main" Grid.Row="1" Style="{StaticResource MaterialDesignMultiFloatingActionAccentPopupBox}" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="5,0,0,10" Width="32" Height="32" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsHitTestVisible="True" PopupMode="MouseOver" Background="#FF2196F3" BorderBrush="#FF2196F3">
+            <StackPanel>
+                <Button x:Name="Btn_Del">
+                    <materialDesign:PackIcon Kind="Delete"/>
+                </Button>
+                <Button x:Name="Btn_Setting">
+                    <materialDesign:PackIcon Kind="Settings"/>
+                </Button>
+                <Button x:Name="Btn_Add">
+                    <materialDesign:PackIcon Kind="Pencil"/>
+                </Button>
+            </StackPanel>
+        </materialDesign:PopupBox>
+    </Grid>
+</Window>

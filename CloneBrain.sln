@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26730.12
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CloneBrain", "CloneBrain\CloneBrain.csproj", "{7160EEFA-DD86-4D82-AE89-C907D8109AAB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7160EEFA-DD86-4D82-AE89-C907D8109AAB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7160EEFA-DD86-4D82-AE89-C907D8109AAB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7160EEFA-DD86-4D82-AE89-C907D8109AAB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7160EEFA-DD86-4D82-AE89-C907D8109AAB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {EDC377F6-87E9-47DD-9652-343C4DD20729}
+	EndGlobalSection
+EndGlobal
